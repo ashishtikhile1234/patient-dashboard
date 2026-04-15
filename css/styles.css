@@ -769,3 +769,103 @@ table { border-collapse: collapse; width: 100%; }
   .topnav__doctor-info { display: none; }
   .profile-photo { width: 140px; height: 140px; }
 }
+
+/* ============================================================
+   POLISH — ANIMATIONS & MICRO-INTERACTIONS
+   ============================================================ */
+
+/* App fade-in */
+.app {
+  animation: fadeIn 0.4s ease-out both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Card hover lift */
+.card {
+  transition: box-shadow 0.2s ease;
+}
+.card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+}
+
+/* Vital card hover */
+.vital-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.vital-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+/* Patient item smooth transitions */
+.patient-item {
+  transition: background 0.15s ease, border-left-color 0.15s ease;
+}
+
+/* Profile button smooth */
+.profile-card__btn {
+  transition: background 0.2s ease, color 0.2s ease, transform 0.1s ease;
+}
+.profile-card__btn:active { transform: scale(0.98); }
+
+/* Focus styles for accessibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Table row hover */
+.diag-table tbody tr {
+  transition: background 0.15s ease;
+}
+.diag-table tbody tr:hover td {
+  background: #EEF9FF !important;
+}
+
+/* Lab item download btn */
+.lab-item__dl {
+  transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+.lab-item__dl:hover {
+  transform: translateY(2px);
+}
+
+/* Scrollbar polish - webkit */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #D0D0D0 transparent;
+}
+*::-webkit-scrollbar       { width: 5px; height: 5px; }
+*::-webkit-scrollbar-track { background: transparent; }
+*::-webkit-scrollbar-thumb { background: #D0D0D0; border-radius: 10px; }
+*::-webkit-scrollbar-thumb:hover { background: #AAAAAA; }
+
+/* Loading text pulse */
+.loading-overlay p {
+  animation: pulse 1.6s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+/* BP dot pulse on active */
+.bp-dot {
+  animation: bpDotPop 0.5s ease-out both;
+}
+@keyframes bpDotPop {
+  from { transform: scale(0); }
+  to   { transform: scale(1); }
+}
+
+/* Diagnostic status badge hover */
+.status-badge {
+  transition: opacity 0.2s;
+}
+.status-badge:hover { opacity: 0.8; }
