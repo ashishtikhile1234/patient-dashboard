@@ -16,7 +16,7 @@
 - Vanilla JavaScript (ES6+)
 - Chart.js v4
 
-## API
+## API.
 - Endpoint: `https://fedskillstest.coalitiontechnologies.workers.dev`
 - Auth: HTTP Basic Auth (credentials generated via `btoa()`)
 
